@@ -17,7 +17,8 @@
 \begin{document}
 \begin{titlepage}
 \section*{Overview}
-Zubax OpenMyxa is a tightly integrated unit that contains an electric motor with electronic speed controller. This sensorless propeller drive is an open hardware reference design for Mitochondrik module\footnote{Refer to \url{zubax.com/products/mitochondrik} for more information}.
+This sensorless propeller drive is an open hardware reference design for Mitochondrik module
+\footnote{Refer to \url{https://zubax.com/products/mitochondrik} for more information}.
 \section*{Features}
 
 \begin{itemize}
@@ -33,7 +34,7 @@ Zubax OpenMyxa is a tightly integrated unit that contains an electric motor with
     \item Low noise and high efficiency due to the sinusoidal motor currents and high-frequency PWM.
     \item Supported interfaces:
     \begin{itemize}
-        \item UAVCAN\footnote{Refer to \url{uavcan.org} for more information}.
+        \item UAVCAN\footnote{Refer to \url{https://uavcan.org} for more information}.
         \item RCPWM (optional).
     \end{itemize}
     \item High quality assurance:
@@ -41,7 +42,8 @@ Zubax OpenMyxa is a tightly integrated unit that contains an electric motor with
         \item Every manufactured unit undergoes a strict testing procedure.
         The testing log for each produced unit is available to the user via the website at
         \url{https://device.zubax.com/device_info}.
-        \item Protection against unlicensed (counterfeit) production by means of a digital signature installed on every manufactured unit.
+        \item Protection against unlicensed (counterfeit) production by means of a digital signature installed on every 
+        manufactured unit.
      \end{itemize}
 \end{itemize}
 
@@ -66,7 +68,7 @@ Zubax OpenMyxa is a tightly integrated unit that contains an electric motor with
 \chapter{Overview}
 Zubax OpenMyxa is an open hardware reference design for Mitochondrik. It is a tightly integrated unit that contains an electric motor with sensorless electronic speed controller in a single monolithic package. 
 
-Mitochondrik \footnote{Refer to \url{zubax.com/products/mitochondrik} for more information} is an integrated module (like an integrated circuit) that enables third-party hardware engineers to design sophisticated custom motor controllers using motor control technology -Telega\footnote{Reefer to \url{zubax.com/technologies/telega} for more information}, which integrates advanced control algorithms.   
+Mitochondrik \footnote{Refer to \url{https://zubax.com/products/mitochondrik} for more information} is an integrated module (like an integrated circuit) that enables third-party hardware engineers to design sophisticated custom motor controllers using motor control technology -Telega\footnote{Reefer to \url{https://zubax.com/technologies/telega} for more information}, which integrates advanced control algorithms.   
 This datasheet is focused only on the OpenMyxa hardware.
   
 The ESC is cooled by the motor. This allows for increasing the maximum ESC power in the same frame. Compact and tightly integrated design minimizes motor wiring and hence internal resistance. This, in turn, means fewer power losses and EMI. 
@@ -96,13 +98,8 @@ the certificate of authenticity and how it can be used to trace the origins of y
 Zubax OpenMyxa can be used with the following accessories:
 
 \begin{itemize}
-    \item 15x5 carbon fiber propeller for Sadulli Piccino (Figure \ref{1555 propeller}).
-    \item 15x5.5 carbon fiber folding propeller for Sadulli Piccino (Figure \ref{1555 folding propeller}).
-    \item 18x6.5 carbon propeller for Sadulli Grosso (Figure \ref{1865 propeller}). 
-    \item 17x6.5 carbon fiber folding propeller for Sadulli Grosso (Figure \ref{1760 folding propeller}).    
     \item UAVCAN Micro patch cable.
     \item UAVCAN Micro termination plug.
-    \item Power cable with XT30 connector
 \end{itemize}
 
 Please contact your supplier for ordering information.
@@ -112,26 +109,6 @@ Please contact your supplier for ordering information.
     \includegraphics[width=0.45\textwidth]{1551propeller} 
     \caption{15x5 carbon fiber propeller.\label{1555 propeller}}
 \end{figure}
-
-\begin{figure}[tb]
-    \centering
-    \includegraphics[width=0.45\textwidth]{1555propeller} 
-    \caption{15x5.5 carbon fiber folding propeller.\label{1555 folding propeller}}
-\end{figure}
-
-\begin{figure}[tb]
-    \centering
-    \includegraphics[width=0.45\textwidth]{1861propeller} 
-    \caption{18x6.5 carbon fiber propeller.\label{1865 propeller}}
-\end{figure}
-
-\begin{figure}[tb]
-    \centering
-    \includegraphics[width=0.45\textwidth]{1760propeller} 
-    \caption{17x6.5 carbon fiber folding propeller.\label{1760 folding propeller}}
-\end{figure}
-
-
 
 
 \chapter{Characteristics}
@@ -189,9 +166,9 @@ Please contact Zubax Robotics for additional reliability and safety information.
                               error                               & -6   &      & +6   & \degree{}C \\
                             & Inverter temperature measurement
                               range                               & -55  &      & 125  & \degree{}C \\
-                            & Motor temperature measurement error & -2   &      & +2   &\degree{}C \\
+                            & Motor temperature measurement error & -8   &      & +8   &\degree{}C \\
                             & Motor temperature measurement
-                              range                               & -50  &      & 175  & \degree{}C \\
+                              range\footnote{Depends on thermistor type} & -50  &      & 175  & \degree{}C \\
                             & BEC output voltage                  &  4.8 & 5.0  & 5.1  & V \\
                             & BEC maximum output current          &      &      & 500  & mA \\
         
@@ -206,7 +183,9 @@ The motor phases are connected internally direct to the power board. This minimi
 
 \subsection{Motor temperature measurement}
 
-Zubax OpenMyxa measures the temperature of motor windings by means of the KTY84/130 PTC thermistor. It converts and translates measured data via UAVCAN bus\footnote{Not all versions of Telega support motor temperature measurement. Refer for Telega documentation for more information}.  
+Zubax OpenMyxa measures the temperature of motor windings by means of the KTY84/130 PTC  thermistor. It converts 
+and translates measured data via UAVCAN bus\footnote{Not all versions of Telega support motor temperature measurement. 
+Refer for Telega documentation for more information}.  
 
 \subsection{Regenerative braking}
 
@@ -262,13 +241,13 @@ The power rails of the connector pair are connected via a switch to the device's
 
 \section{Indication}
 
-Zubax OpenMyxa is equipped with a single RGB LED indicator for purposes of status indication and single Green LED for CAN bus transfer indication. 
-These LEDs are located on the PCB near the UAVCAN connectors.
+Zubax OpenMyxa is equipped with a single RGB LED indicator for purposes of status indication and single Green LED 
+for CAN bus transfer indication. These LEDs are located on the PCB near the UAVCAN connectors.
 
 \section{Mechanical characteristics}
 
-The drawings \ref{openmyxa_drawing} and \ref{openmyxa_piccino_drawing} document the basic mechanical characteristics of Zubax OpenMyxa,
-such as dimensions and propeller mounting holes placement.
+The drawings \ref{openmyxa_drawing} and \ref{openmyxa_piccino_drawing} document the basic mechanical characteristics 
+of Zubax OpenMyxa,such as dimensions and propeller mounting holes placement.
 
 OpenMyxa is mounting on the chassis like a standard motor. It has standard  19x25 and 25x25 mounting patterns (see Figure \ref{openmyxa_mounting_drawing}).
 
